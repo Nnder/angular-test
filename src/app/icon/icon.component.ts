@@ -9,19 +9,19 @@ import { faAdn, faAngular, faReact, faVuejs } from '@fortawesome/free-brands-svg
   standalone: true,
   imports: [FontAwesomeModule],
 })
+
 export class IconComponent {
     icons = [faArrowDown, faCoffee, faArrowUp, faAdn, faAngular, faReact, faVuejs, faArrowCircleRight];
     icon = this.icons[0];
 
   updateIcon() {
     setTimeout(()=>{
-        const random = this.getRandomIcon()
-        console.log(random)
+        const random = this.getRandom()
         this.icon = this.icons[random]
     }, 3000)
     
   }
-  getRandomIcon() {
+  getRandom() {
     return Math.round(Math.random() * (this.icons.length-1 - 0) + 0);
  }
 }
